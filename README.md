@@ -3,6 +3,8 @@
 ## Setup
 
 ```
+git clone https://github.com/thetatoken/tnt20-token-example
+cd tnt20-token-example
 npm install
 ```
 
