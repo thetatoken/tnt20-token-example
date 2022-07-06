@@ -82,7 +82,9 @@ node scripts/query_token_balance.js <Network> <WalletAddress>
 Before running the following commoands, please make sure the following addresses on the Theta Testnet has sufficient amount of TFuel (at least 100 TFuel):
 
 Deployer wallet: [0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A](https://testnet-explorer.thetatoken.org/account/0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A)
+
 Initial token pool wallet: [0x1563915e194D8CfBA1943570603F7606A3115508](https://testnet-explorer.thetatoken.org/account/0x1563915e194D8CfBA1943570603F7606A3115508)
+
 Admin wallet: [0x5CbDd86a2FA8Dc4bDdd8a8f69dBa48572EeC07FB](https://testnet-explorer.thetatoken.org/account/0x5CbDd86a2FA8Dc4bDdd8a8f69dBa48572EeC07FB)
 
 Note: The private keys of the above accounts are `0x1111...11111`, `0x2222...22222`, and `0x3333...33333`, respectively (see [here]() and [here]()). This just for demonstration purpose. In your actual mainnet deployment, please use secure private keys, and make sure the corresponding wallet addresses have sufficient amount of TFuels.
