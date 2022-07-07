@@ -10,7 +10,7 @@ This tutorial will use Truffle and Ganache for contract deployment and testing. 
 
 Next, clone this repository and install dependencies.
 
-```
+```bash
 git clone https://github.com/thetatoken/tnt20-token-example
 cd tnt20-token-example
 npm install
@@ -20,7 +20,7 @@ npm install
 
 Compile the smart contracts under the `contracts/` folder with the following command. Make sure there is no compilation error.
 
-```
+```bash
 truffle compile
 ```
 
@@ -38,13 +38,13 @@ ganache-cli --networkId 3456 --port 8545 -l 20000000 --account='0x11111111111111
 
 Now, **open a new terminal**, and deploy the TNT20 token contract to the local simulated network with the following command:
 
-```
+```bash
 truffle migrate --reset --compile-all --network=ganache
 ```
 
 The above command should print out logs similar to the following (the contract address might be different). Please note down the contract address. 
 
-```
+```bash
 1_initial_migration.js
 ======================
 
@@ -70,13 +70,13 @@ node scripts/print_tnt20_token_details.js <Network> <TNT20TokenContractAddress>
 
 Assuming the contract address is `0x73b647cbA2FE75Ba05B8e12ef8F8D6327D6367bF`, we can query the details of the TNT20 token we just deployed with the following command:
 
-```
+```bash
 node scripts/print_tnt20_token_details.js ganache 0x73b647cbA2FE75Ba05B8e12ef8F8D6327D6367bF
 ```
 
 The script should print out something like
 
-```
+```bash
 ==================== Token details =====================
 Address     : 0x73b647cbA2FE75Ba05B8e12ef8F8D6327D6367bF
 Name        : Awesome Token
@@ -91,13 +91,13 @@ As you can see, the name and symbol are what we set in the `migrations/1_initial
 
 You can query the TNT20 token balance of a wallet using script `scripts/query_tnt20_token_balance.js`:
 
-```
+```bash
 node scripts/query_tnt20_token_balance.js <Network> <TNT20TokenContractAddress> <WalletAddress>
 ```
 
 For instance, you can query the token balance of wallet address `0x1563915e194D8CfBA1943570603F7606A3115508`:
 
-```
+```bash
 node scripts/query_tnt20_token_balance.js ganache 0x73b647cbA2FE75Ba05B8e12ef8F8D6327D6367bF 0x1563915e194D8CfBA1943570603F7606A3115508
 ```
 
@@ -107,13 +107,13 @@ Note that this wallet the the "initial distribution wallet" specified in the [de
 
 We have prepare a script `scripts/send_tnt20_token.js` for transfering TNT20 tokens between two wallets:
 
-```
+```bash
 node scripts/send_tnt20_token.js <Network> <TNT20TokenContractAddress> <SenderPrivateKey> <ReceiverAddress> <AmountInWei>
 ```
 
 The following command sequence queries the token balance of the sender and receiver wallet before and after the token transfer. As the print out shows `999999999 AST Wei` was sent from the sender address to the receiver address. The sender is the initial distribution wallet address `0x1563915e194D8CfBA1943570603F7606A3115508`, whose private key is `2222222222222222222222222222222222222222222222222222222222222222`.
 
-```
+```bash
 // Query the token balance of the sender address before the transfer
 node scripts/query_tnt20_token_balance.js ganache 0x73b647cbA2FE75Ba05B8e12ef8F8D6327D6367bF 0x1563915e194D8CfBA1943570603F7606A3115508
 
@@ -142,13 +142,13 @@ Deployer wallet: [0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A](https://testnet-ex
 
 Initial distribution wallet: [0x1563915e194D8CfBA1943570603F7606A3115508](https://testnet-explorer.thetatoken.org/account/0x1563915e194D8CfBA1943570603F7606A3115508)
 
-**Note**: The private keys of the above accounts are `0x1111...11111` and `0x2222...22222`, respectively (e.g. see [here]()). This just for demonstration purpose. For your actual mainnet deployment, please use secure private keys, and make sure the corresponding wallet addresses have sufficient amount of TFuels.
+**Note**: The private keys of the above accounts are `0x1111...11111` and `0x2222...22222`, respectively (e.g. see [here](https://github.com/thetatoken/tnt20-token-example/blob/dc3176b706c678b41c4fe61531881c0ab6815f5d/truffle-config.js#L48)). This just for demonstration purpose. For your actual mainnet deployment, please use secure private keys, and make sure the corresponding wallet addresses have sufficient amount of TFuels.
 
 ### 4.2. Deploy to the Theta Testnet
 
 Next, run the following command to deploy the TNT20 token contract to the Theta Testnet. Please note down the contract address printed by the `truffle migrate` command.
 
-```
+```bash
 truffle migrate --reset --compile-all --network=theta_testnet
 ```
 
@@ -156,7 +156,7 @@ truffle migrate --reset --compile-all --network=theta_testnet
 
 Use the following command to print details of a token deployed on the Theta Testnet:
 
-```
+```bash
 node scripts/print_tnt20_token_details.js theta_testnet <TNT20TokenContractAddress>
 ```
 
@@ -164,7 +164,7 @@ node scripts/print_tnt20_token_details.js theta_testnet <TNT20TokenContractAddre
 
 Use the following command to query the TNT20 token balance of a wallet on the Theta Testnet:
 
-```
+```bash
 node scripts/query_tnt20_token_balance.js theta_testnet <TNT20TokenContractAddress> <WalletAddress>
 ```
 
@@ -172,6 +172,6 @@ node scripts/query_tnt20_token_balance.js theta_testnet <TNT20TokenContractAddre
 
 Use the following command to send TNT20 tokens between two wallets on the Theta Testnet:
 
-```
+```bash
 node scripts/send_tnt20_token.js theta_testnet <TNT20TokenContractAddress> <SenderPrivateKey> <ReceiverAddress> <AmountInWei>
 ```
