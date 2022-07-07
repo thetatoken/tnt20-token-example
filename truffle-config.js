@@ -31,12 +31,10 @@ module.exports = {
 
     ganache: {
       provider: () => {
-        var deployerPrivateKey        = '1111111111111111111111111111111111111111111111111111111111111111';
-        var initDistrWalletPrivateKey = '2222222222222222222222222222222222222222222222222222222222222222';
-        var adminPrivateKey           = '3333333333333333333333333333333333333333333333333333333333333333';
+        var deployerPrivateKey = '1111111111111111111111111111111111111111111111111111111111111111';
  
         return new HDWalletProvider({
-          privateKeys: [deployerPrivateKey, initDistrWalletPrivateKey, adminPrivateKey],
+          privateKeys: [deployerPrivateKey],
           providerOrUrl: 'http://127.0.0.1:8545',
         });
       },
@@ -47,14 +45,11 @@ module.exports = {
     theta_testnet: {
       provider: () => {
  
-        // IMPORTANT: Please replace the private keys below with the private key of the actual deployer, i
-        //            the initial token distribution wallet, and the admin wallet. Also make sure the deployer 
-        //             wallet has a sufficient amount of Testnet TFuel, e.g. 100 TFuel
-        var deployerPrivateKey        = '1111111111111111111111111111111111111111111111111111111111111111';
-        var initDistrWalletPrivateKey = '2222222222222222222222222222222222222222222222222222222222222222';
-        var adminPrivateKey           = '3333333333333333333333333333333333333333333333333333333333333333';
+        // IMPORTANT: Please replace the private key below with the private key of the actual deployer. 
+        //            Also make sure the deployer wallet has a sufficient amount of Testnet TFuel, e.g. 100 TFuel
+        var deployerPrivateKey = '1111111111111111111111111111111111111111111111111111111111111111';
         return new HDWalletProvider({
-          privateKeys: [deployerPrivateKey, initDistrWalletPrivateKey, adminPrivateKey],
+          privateKeys: [deployerPrivateKey],
           providerOrUrl: 'https://eth-rpc-api-testnet.thetatoken.org/rpc',
         });
       },
@@ -65,15 +60,12 @@ module.exports = {
     theta_mainnet: {
       provider: () => {
  
-        // IMPORTANT: Please replace the private keys below with the private key of the actual deployer, i
-        //            the initial token distribution wallet, and the admin wallet. Also make sure the deployer 
-        //             wallet has a sufficient amount of Mainnet TFuel, e.g. 100 TFuel
-        var deployerPrivateKey        = '';
-        var initDistrWalletPrivateKey = '';
-        var adminPrivateKey           = '';
+        // IMPORTANT: Please replace the private key below with the private key of the actual deployer.
+        //             Also make sure the deployer wallet has a sufficient amount of Mainnet TFuel, e.g. 100 TFuel
+        var deployerPrivateKey = '12345';
 
         return new HDWalletProvider({
-          privateKeys: [deployerPrivateKey, initDistrWalletPrivateKey, adminPrivateKey],
+          privateKeys: [deployerPrivateKey],
           providerOrUrl: 'https://eth-rpc-api.thetatoken.org/rpc',
         });
       },
